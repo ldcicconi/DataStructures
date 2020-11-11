@@ -18,12 +18,12 @@ class WorkerQueue:
         return nextAvailable
 
     def changePriority(self, i, p):
-        # p_old = self.worker_heap[i].time_available
-        # self.worker_heap[i].time_available = p
-        # if p > p_old:
-        #     self.siftUp(i)
-        # else:
-        #     self.siftDown(i)
+        p_old = self.worker_heap[i].time_available
+        self.worker_heap[i].time_available = p
+        if p > p_old:
+            self.siftUp(i)
+        else:
+            self.siftDown(i)
         
         self.siftDown(i)
 
